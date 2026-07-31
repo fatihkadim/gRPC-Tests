@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package chat;
+
+
+service ChatService {
+    rpc SendMessage (MessageRequest) returns (MessageResponse);
+    rpc doMath (mathReq) returns (mathResp);
+    rpc motivation (nameReq) returns (nameResp);
+}
+
+message MessageRequest {
+    string username = 1; //1 bir deger deil, field num yani alan num. username alanınn binary formatta kimlik nosu 1dir. yani bu sayı protobufun veriyi bin. formata cevirirken alan isimlerini(usernam,content) gibi metin haldeki isimleri hiç göndermemesini sağlayan kısayol.
+    string content = 2;
+}
+
+message MessageResponse {
+    bool received = 1;
+    string server_note= 2;
+
+}
+message mathReq {
+    int32 num1 = 1;
+    int32 num2 = 2;
+    string operation = 3;
+}
+
+message mathResp {
+    float final_answer = 1;
+    bool received = 2;
+    string note = 3;
+}
+message nameReq{
+    string username = 1;
+}
+message nameResp {
+    bool received = 1;
+    string message = 2;
+}
