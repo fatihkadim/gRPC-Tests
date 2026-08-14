@@ -6,6 +6,9 @@ import chat_pb2
 import chat_pb2_grpc
 
 
+todo_list = []
+
+
 class ChatServiceServicer(chat_pb2_grpc.ChatServiceServicer):
     def SendMessage(self, request, context):
         # request: istemciden gelen MessageRequest nesnesi
@@ -47,6 +50,15 @@ class ChatServiceServicer(chat_pb2_grpc.ChatServiceServicer):
             message = message
         )
 
+    def addTodo(self, request, context):
+        todo_list.append({"user": request.username, "task": request.task})
+        task_number = len(todo_list)
+        return chat_pb2.TodoResponse(
+            saved=True,
+            task_number=task_number,
+            summary=f"{request.username} icin gorev #{task_number}: {request.task}"
+        )
+
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     chat_pb2_grpc.add_ChatServiceServicer_to_server(
@@ -59,4 +71,4 @@ def serve():
 
 
 if __name__ == "__main__":
-    serve()
+    serve()

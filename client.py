@@ -46,7 +46,29 @@ def run():
         )
         mot_resp = stub.motivation(mot_req)
         print("\nMotivasyon")
-        print(f"mesaj : {mot_resp.message}")        
+        print(f"mesaj : {mot_resp.message}")
+
+        # -------------------------
+        # addTodo RPC
+        # -------------------------
+        todo1 = chat_pb2.TodoRequest(
+            username="Fatih",
+            task="gRPC ogrenmeye devam et"
+        )
+        resp1 = stub.addTodo(todo1)
+        print("\n=== addTodo ===")
+        print(f"saved       : {resp1.saved}")
+        print(f"task_number : {resp1.task_number}")
+        print(f"summary     : {resp1.summary}")
+
+        todo2 = chat_pb2.TodoRequest(
+            username="Fatih",
+            task="Docker Compose ile deploy et"
+        )
+        resp2 = stub.addTodo(todo2)
+        print(f"\nsaved       : {resp2.saved}")
+        print(f"task_number : {resp2.task_number}")
+        print(f"summary     : {resp2.summary}")
 
 if __name__ == "__main__":
-    run()
+    run()

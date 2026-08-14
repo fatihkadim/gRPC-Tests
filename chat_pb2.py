@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nchat.proto\x12\x04\x63hat\"3\n\x0eMessageRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\"8\n\x0fMessageResponse\x12\x10\n\x08received\x18\x01 \x01(\x08\x12\x13\n\x0bserver_note\x18\x02 \x01(\t\"8\n\x07mathReq\x12\x0c\n\x04num1\x18\x01 \x01(\x05\x12\x0c\n\x04num2\x18\x02 \x01(\x05\x12\x11\n\toperation\x18\x03 \x01(\t\"@\n\x08mathResp\x12\x14\n\x0c\x66inal_answer\x18\x01 \x01(\x02\x12\x10\n\x08received\x18\x02 \x01(\x08\x12\x0c\n\x04note\x18\x03 \x01(\t\"\x1b\n\x07nameReq\x12\x10\n\x08username\x18\x01 \x01(\t\"-\n\x08nameResp\x12\x10\n\x08received\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t2\x9f\x01\n\x0b\x43hatService\x12:\n\x0bSendMessage\x12\x14.chat.MessageRequest\x1a\x15.chat.MessageResponse\x12\'\n\x06\x64oMath\x12\r.chat.mathReq\x1a\x0e.chat.mathResp\x12+\n\nmotivation\x12\r.chat.nameReq\x1a\x0e.chat.nameRespb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nchat.proto\x12\x04\x63hat\"3\n\x0eMessageRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\"8\n\x0fMessageResponse\x12\x10\n\x08received\x18\x01 \x01(\x08\x12\x13\n\x0bserver_note\x18\x02 \x01(\t\"8\n\x07mathReq\x12\x0c\n\x04num1\x18\x01 \x01(\x05\x12\x0c\n\x04num2\x18\x02 \x01(\x05\x12\x11\n\toperation\x18\x03 \x01(\t\"@\n\x08mathResp\x12\x14\n\x0c\x66inal_answer\x18\x01 \x01(\x02\x12\x10\n\x08received\x18\x02 \x01(\x08\x12\x0c\n\x04note\x18\x03 \x01(\t\"\x1b\n\x07nameReq\x12\x10\n\x08username\x18\x01 \x01(\t\"-\n\x08nameResp\x12\x10\n\x08received\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"-\n\x0bTodoRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\x0c\n\x04task\x18\x02 \x01(\t\"C\n\x0cTodoResponse\x12\r\n\x05saved\x18\x01 \x01(\x08\x12\x13\n\x0btask_number\x18\x02 \x01(\x05\x12\x0f\n\x07summary\x18\x03 \x01(\t2\xd1\x01\n\x0b\x43hatService\x12:\n\x0bSendMessage\x12\x14.chat.MessageRequest\x1a\x15.chat.MessageResponse\x12\'\n\x06\x64oMath\x12\r.chat.mathReq\x1a\x0e.chat.mathResp\x12+\n\nmotivation\x12\r.chat.nameReq\x1a\x0e.chat.nameResp\x12\x30\n\x07\x61\x64\x64Todo\x12\x11.chat.TodoRequest\x1a\x12.chat.TodoResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,6 +43,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_NAMEREQ']._serialized_end=282
   _globals['_NAMERESP']._serialized_start=284
   _globals['_NAMERESP']._serialized_end=329
-  _globals['_CHATSERVICE']._serialized_start=332
-  _globals['_CHATSERVICE']._serialized_end=491
+  _globals['_TODOREQUEST']._serialized_start=331
+  _globals['_TODOREQUEST']._serialized_end=376
+  _globals['_TODORESPONSE']._serialized_start=378
+  _globals['_TODORESPONSE']._serialized_end=445
+  _globals['_CHATSERVICE']._serialized_start=448
+  _globals['_CHATSERVICE']._serialized_end=657
 # @@protoc_insertion_point(module_scope)
